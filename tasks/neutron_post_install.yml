@@ -208,3 +208,10 @@
      - ansible_facts['hostname'] in groups['neutron_metadata_agent']
      - groups['haproxy_all'] is defined
      - ansible_facts['hostname'] not in groups['haproxy_all']
+
+# ddabrowski: should be removed during next openstack upgrade(Z)
+- name: Drop custom keepalived_state_change.py(CLDENG-686)
+  get_url:
+    url: https://opendev.org/openstack/neutron/raw/commit/49473049f1cd176c25b0cdfb26171f8eeeb21466/neutron/agent/l3/keepalived_state_change.py
+    dest: "/openstack/venvs/neutron-{{ neutron_venv_tag }}/lib/python3.8/site-packages/neutron/agent/l3/keepalived_state_change.py"
+  tags: cldeng-686
