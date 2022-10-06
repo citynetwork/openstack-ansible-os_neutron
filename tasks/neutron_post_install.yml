@@ -214,4 +214,5 @@
   get_url:
     url: https://opendev.org/openstack/neutron/raw/commit/49473049f1cd176c25b0cdfb26171f8eeeb21466/neutron/agent/l3/keepalived_state_change.py
     dest: "/openstack/venvs/neutron-{{ neutron_venv_tag }}/lib/python3.8/site-packages/neutron/agent/l3/keepalived_state_change.py"
+    force: yes
   tags: cldeng-686
